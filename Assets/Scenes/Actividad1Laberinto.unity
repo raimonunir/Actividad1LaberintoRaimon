@@ -1314,7 +1314,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4193a1122d019df42bdcb4777bed42fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelMiniMap: {fileID: 742008410}
   movementSpeed: 6
 --- !u!114 &149811150
 MonoBehaviour:
@@ -1329,7 +1328,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   panelStartUI: {fileID: 2072003698}
-  minimumSecondsShowingStartMenu: 0
+  minimumSecondsShowingStartMenu: 0.5
   panelEndGameUI: {fileID: 25573780}
   panelMiniMap: {fileID: 742008410}
   secondsToQuitAppAffterWin: 3

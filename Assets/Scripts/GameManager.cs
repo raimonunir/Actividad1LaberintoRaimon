@@ -18,12 +18,14 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // setting UI panels and animators
         panelEndGameUI.SetActive(false);
         panelStartUIanimator = panelStartUI.GetComponent<Animator>();
     }
 
     private void Update()
     {
+        // hide/show miniMap
         if (Input.GetKeyDown(KeyCode.H))
         {
             panelMiniMap.SetActive(!panelMiniMap.activeSelf);
@@ -34,10 +36,11 @@ public class GameManager : MonoBehaviour
     {
         if (other.CompareTag("Exit"))
         {
+            // hide minimap, show UI end game
             panelMiniMap.SetActive(false);
             panelEndGameUI.SetActive(true);
-            Time.timeScale = 0f;
             StartCoroutine(ExitAppAfterSeconds(secondsToQuitAppAffterWin));
+            Time.timeScale = 0f;
         }
     }
 
@@ -68,6 +71,9 @@ public class GameManager : MonoBehaviour
         Application.Quit();
     }
 
+    /****
+     * This function is called from an Event Trigger from PanelStart
+     ****/
     public void StartGame()
     {
         // fade out and disable UI start menu after x seconds
