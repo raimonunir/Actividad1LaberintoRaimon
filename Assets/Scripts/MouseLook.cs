@@ -10,12 +10,6 @@ public class MouseLook : MonoBehaviour
     [SerializeField] [Range(75f, 180f)] [Tooltip("Limits X rotation")] private float maxXrotation;
     private float xRotation = -25f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        // cursor invisible
-        Cursor.lockState = CursorLockMode.Locked;
-    }
 
     // Update is called once per frame
     void Update()

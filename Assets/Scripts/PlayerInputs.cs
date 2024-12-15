@@ -7,7 +7,6 @@ public class PlayerInputs : MonoBehaviour
 {
 
     // globals
-    [SerializeField] private GameObject panelMiniMap;
     [SerializeField][Range(5f, 20f)] private float movementSpeed;
     private CharacterController characterController;
 
@@ -29,9 +28,5 @@ public class PlayerInputs : MonoBehaviour
         characterController.Move (movementSpeed * Time.deltaTime * direction);
 
         //XXX rotation is in camera Mouse Look component
-
-        if (Input.GetKeyDown(KeyCode.H)) {
-           panelMiniMap.SetActive(!panelMiniMap.activeSelf);
-        }
     }
 }
