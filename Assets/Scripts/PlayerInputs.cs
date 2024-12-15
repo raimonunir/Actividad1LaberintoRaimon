@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))] 
-public class PlayerMovement : MonoBehaviour
+public class PlayerInputs : MonoBehaviour
 {
 
     // globals
+    [SerializeField] private GameObject panelMiniMap;
     [SerializeField][Range(5f, 20f)] private float movementSpeed;
     private CharacterController characterController;
+
     
 
     // Start is called before the first frame update
@@ -26,6 +28,10 @@ public class PlayerMovement : MonoBehaviour
         Vector3 direction = (transform.right * x + transform.forward * z).normalized;
         characterController.Move (movementSpeed * Time.deltaTime * direction);
 
-        // rotation is in camera Mouse Look component
+        //XXX rotation is in camera Mouse Look component
+
+        if (Input.GetKeyDown(KeyCode.H)) {
+           panelMiniMap.SetActive(!panelMiniMap.activeSelf);
+        }
     }
 }
